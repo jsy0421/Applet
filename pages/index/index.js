@@ -91,9 +91,9 @@ Page({
     // reset circle progress
     this.setData({
       leftDeg: initDeg.left,
-      rightDeg: initDeg.right
-    })
+      rightDeg: initDeg.right,
 
+    })
     // clear timer
     this.timer && clearInterval(this.timer)
   },
@@ -106,6 +106,7 @@ Page({
     let M = util.formatTime(Math.floor(remainingTime / (60)) % 60, 'MM')
     let S = util.formatTime(Math.floor(remainingTime) % 60, 'SS')
     let halfTime
+    let check =  wx.getStorageSync('check')
 
     // update text
     if (remainingTime > 0) {
@@ -117,6 +118,13 @@ Page({
       this.setData({
         completed: true
       })
+      if (check == '1'){
+        let i
+      for (i=0;i<1000;i++){
+        wx.vibrateLong()
+      }
+      }
+      
       this.stopTimer()
       return
     }

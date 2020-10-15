@@ -9,6 +9,7 @@ Page({
       red: wx.getStorageSync('red'),
       green: wx.getStorageSync('green'),
       blue: wx.getStorageSync('blue'),
+      check:wx.getStorageSync('check')
     })
   },
   changeWorkTime: function(e) {
@@ -43,6 +44,12 @@ Page({
   },
   sure: function(e){
     this.onShow();
-  }
+  },
   
+checkedTap: function (e) {
+	wx.setStorage({
+    key: 'check',
+    data: e.detail.value
+  })
+ }
 })
