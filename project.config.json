@@ -34,7 +34,7 @@
   "compileType": "miniprogram",
   "libVersion": "1.9.1",
   "appid": "wxc485e910d320a0b3",
-  "projectname": "timer",
+  "projectname": "Applet",
   "simulatorType": "wechat",
   "simulatorPluginLibVersion": {},
   "condition": {
